@@ -1,6 +1,6 @@
 backend:
   name: github-api
-  repo: owner/repo # Path to your Github repository
+  repo: https://github.com/atrujic/phone-store # Path to your Github repository
   branch: master # Branch to update (master by default)
 
 media_folder: "public/images" # Folder where user uploaded files should go
