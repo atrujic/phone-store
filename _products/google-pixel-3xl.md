@@ -1,6 +1,6 @@
 ---
 title: Google Pixel 3XL
-image: /images/google-pixel-3xl.jpg
+image: /images/uploads/google-pixel-3xl.jpg
 price: 349
 company: Google
 inCart: false
