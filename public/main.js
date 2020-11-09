@@ -42,13 +42,11 @@ const getProducts = () => {
         const metadataIndices = lines.reduce(getMetadataIndices, []);
         const metadata = parseMetadata({ lines, metadataIndices });
         const content = parseContent({ lines, metadataIndices });
-        const date = new Date();
-        const timestamp = date.getTime() % 1000;
         product = {
-          id: timestamp,
+          id: Date.now(),
           title: metadata.title ? metadata.title : "No title given",
           image: metadata.image ? metadata.image : "No image given",
-          price: metadata.price ? metadata.price : "No price given",
+          price: metadata.price ? parseInt(metadata.price) : "No price given",
           company: metadata.company ? metadata.company : "No price given",
           inCart: metadata
             ? metadata.inCart.includes("true")
