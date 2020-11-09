@@ -1,14 +1,14 @@
-import React from 'react';
-import ProductItem from '../product-item/ProductItem';
-import Title from '../../common/Title';
-import { useProductState } from '../../../global-state';
+import React from "react";
+import ProductItem from "../product-item/ProductItem";
+import Title from "../../common/Title";
+import { useProductState } from "../../../global-state";
 
 export default function ProductList() {
   // Accessing productState
   const { productState } = useProductState();
   const { products } = productState;
-  let productItems = products.map(product => (
-    <ProductItem key={product.id} product={product} />
+  let productItems = products.map((product) => (
+    <ProductItem key={product.title} product={product} />
   ));
   return (
     <>
