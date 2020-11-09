@@ -1,15 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import { Button } from '../../common/Button';
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { Button } from "../../common/Button";
 
-import { useModalState } from '../../../global-state';
+import { useModalState } from "../../../global-state";
 
 export default function Modal() {
   const { modalState, modalActions } = useModalState();
   const { modalOpen, modalProduct } = modalState;
   const { closeModal } = modalActions;
-  const { img, title, price } = modalProduct;
+  const { image, title, price } = modalProduct;
   // If Modal is closed don't display anything
   if (!modalOpen) return null;
   return (
@@ -21,7 +21,7 @@ export default function Modal() {
             className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalized p-5"
           >
             <h5>Item added to cart</h5>
-            <img src={img} alt="Product" className="img-fluid" />
+            <img src={image} alt="Product" className="img-fluid" />
             <h5>{title}</h5>
             <h5 className="text-muted">Price: ${price}</h5>
             <Link to="/">

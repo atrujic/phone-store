@@ -1,17 +1,17 @@
-import React from 'react';
-import { useCartState } from '../../global-state';
+import React from "react";
+import { useCartState } from "../../global-state";
 
 export default function CartItem({ item }) {
   const { cartActions } = useCartState();
   const { inc, dec, removeItemFromCart } = cartActions;
-  const { id, title, img, price, total, count } = item;
+  const { id, title, image, price, total, count } = item;
   return (
     <div className="row my-2 text-capitalize text-center">
       <div className="col-10 mx-auto col-lg-2">
         <img
-          src={img}
+          src={image}
           alt="Product"
-          style={{ width: '5rem', height: '5rem' }}
+          style={{ width: "5rem", height: "5rem" }}
           className="img-fluid"
         />
       </div>
@@ -27,7 +27,7 @@ export default function CartItem({ item }) {
           <span className="btn btn-black mx-1" onClick={() => dec(id)}>
             -
           </span>
-          <span className="btn btn-black mx-1" style={{ cursor: 'auto' }}>
+          <span className="btn btn-black mx-1" style={{ cursor: "auto" }}>
             {count}
           </span>
           <span className="btn btn-black mx-1" onClick={() => inc(id)}>
