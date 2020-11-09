@@ -1,7 +1,7 @@
 ---
 title: Nokia 9
 image: /images/uploads/nokia-9.jpg
-price: 297
+price: 293
 company: Nokia
 inCart: false
 count: 0
