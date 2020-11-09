@@ -14,7 +14,7 @@ collections: # A list of collections the CMS should be able to edit
     fields: # The fields each document in this collection have
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
-      - { label: "Price", name: "price", widget: "number" }
+      - { label: "Price", name: "price", widget: "number", value_type: "float" }
       - { label: "Company", name: "company", widget: "string" }
       - { label: "In cart", name: "inCart", widget: "boolean", default: false }
       - { label: "Count", name: "count", widget: "number", default: 0 }
