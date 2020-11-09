@@ -43,7 +43,7 @@ const getProducts = () => {
         const metadata = parseMetadata({ lines, metadataIndices });
         const content = parseContent({ lines, metadataIndices });
         product = {
-          id: Date.now(),
+          id: Math.random().toString(36).substr(2, 9),
           title: metadata.title ? metadata.title : "No title given",
           image: metadata.image ? metadata.image : "No image given",
           price: metadata.price ? parseInt(metadata.price) : "No price given",

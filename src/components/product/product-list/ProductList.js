@@ -8,7 +8,7 @@ export default function ProductList() {
   const { productState } = useProductState();
   const { products } = productState;
   let productItems = products.map((product) => (
-    <ProductItem key={product.title} product={product} />
+    <ProductItem key={product.id} product={product} />
   ));
   return (
     <>
