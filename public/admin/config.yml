@@ -1,15 +1,15 @@
 backend:
-  name: github-api
-  repo: https://github.com/atrujic/phone-store # Path to your Github repository
-  branch: master # Branch to update (master by default)
+  name: github
+  repo: atrujic/phone-store # Path to your Github repository
+  branch: main # Branch to update (master by default)
 
-media_folder: "public/images" # Folder where user uploaded files should go
-public_folder: "images"
+media_folder: "public/images/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images" # The src attribute for uploaded media will begin with /images
 
 collections: # A list of collections the CMS should be able to edit
   - name: "product" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Product" # Used in the UI, ie.: "New Post"
-    folder: "_products" # The path to the folder where the documents are stored
+    folder: "content/products" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
       - { label: "Title", name: "title", widget: "string" }
@@ -17,6 +17,6 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Price", name: "price", widget: "number" }
       - { label: "Company", name: "company", widget: "string" }
       - { label: "Specifications", name: "spec", widget: "string" }
-      - { label: "In car", name: "inCart", widget: "boolean", default: false }
+      - { label: "In cart", name: "inCart", widget: "boolean", default: false }
       - { label: "Count", name: "count", widget: "number", default: 0 }
       - { label: "Total", name: "total", widget: "number", default: 0 }
