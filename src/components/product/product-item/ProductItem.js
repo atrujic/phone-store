@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import {
   useProductState,
   useCartState,
-  useModalState
-} from '../../../global-state';
+  useModalState,
+} from "../../../global-state";
 
 export default function ProductItem({ product }) {
-  const { id, title, img, price, inCart } = product;
+  const { id, title, image, price, inCart } = product;
   const { productActions } = useProductState();
   const { setProductDetails } = productActions;
   const { cartActions } = useCartState();
@@ -24,7 +24,7 @@ export default function ProductItem({ product }) {
           onClick={() => setProductDetails(product)}
         >
           <Link to="/details">
-            <img src={img} alt="product" className="card-img-top" />
+            <img src={image} alt="product" className="card-img-top" />
           </Link>
           <button
             className="cart-btn"
@@ -60,8 +60,8 @@ ProductItem.propTypes = {
     img: PropTypes.string,
     title: PropTypes.string,
     price: PropTypes.number,
-    inCart: PropTypes.bool
-  }).isRequired
+    inCart: PropTypes.bool,
+  }).isRequired,
 };
 
 const Product = styled.div`

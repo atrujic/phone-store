@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '../../common/Button';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Button } from "../../common/Button";
 
 import {
   useProductState,
   useCartState,
-  useModalState
-} from '../../../global-state';
+  useModalState,
+} from "../../../global-state";
 
 export default function Details() {
   // Accesing state and actions
@@ -17,7 +17,7 @@ export default function Details() {
   const { modalActions } = useModalState();
   const { openModal } = modalActions;
 
-  const { id, title, img, price, company, info, inCart } = productDetails;
+  const { id, title, image, price, company, content, inCart } = productDetails;
   return (
     <div className="container py-5">
       {/* Product Title */}
@@ -31,7 +31,7 @@ export default function Details() {
       <div className="row">
         {/* Product Image */}
         <div className="col-10 mx-auto col-md-6 my-3">
-          <img src={img} alt="Product" className="img-fluid" />
+          <img src={image} alt="Product" className="img-fluid" />
         </div>
         {/* Product Details */}
         <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
@@ -48,7 +48,7 @@ export default function Details() {
           <p className="text-capitalized font-weight-bold mt-3 mb-0">
             Some info about the product:
           </p>
-          <p className="text-muted lead">{info}</p>
+          <p className="text-muted lead">{content}</p>
           {/* Buttons */}
           <div>
             <Link to="/">
@@ -62,7 +62,7 @@ export default function Details() {
                 openModal(id);
               }}
             >
-              {inCart ? 'In Cart' : 'Add to cart'}
+              {inCart ? "In Cart" : "Add to cart"}
             </Button>
           </div>
         </div>

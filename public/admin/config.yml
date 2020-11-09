@@ -4,19 +4,19 @@ backend:
   branch: main # Branch to update (master by default)
 
 media_folder: "public/images/uploads" # Media files will be stored in the repo under static/images/uploads
-public_folder: "/images" # The src attribute for uploaded media will begin with /images
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images
 
 collections: # A list of collections the CMS should be able to edit
   - name: "product" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Product" # Used in the UI, ie.: "New Post"
-    folder: "content/products" # The path to the folder where the documents are stored
+    folder: "_products" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Price", name: "price", widget: "number" }
       - { label: "Company", name: "company", widget: "string" }
-      - { label: "Specifications", name: "spec", widget: "string" }
       - { label: "In cart", name: "inCart", widget: "boolean", default: false }
       - { label: "Count", name: "count", widget: "number", default: 0 }
       - { label: "Total", name: "total", widget: "number", default: 0 }
+      - { label: "Body", name: "body", widget: "markdown" }

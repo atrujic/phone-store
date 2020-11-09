@@ -1,14 +1,15 @@
-import React, { useReducer, createContext, useContext } from 'react';
-import { storeProducts, detailProduct } from '../data';
-import { useProductActions } from '../actions';
-import { SET_PRODUCT_DETAILS } from '../actions/types';
+import React, { useReducer, createContext, useContext } from "react";
+import { storeProducts, detailProduct } from "../data";
+import products from "../products.json";
+import { useProductActions } from "../actions";
+import { SET_PRODUCT_DETAILS } from "../actions/types";
 
 let tempProducts = [];
-storeProducts.forEach(item => tempProducts.push({ ...item }));
+products.forEach((item) => tempProducts.push({ ...item }));
 
 const initialState = {
   products: tempProducts,
-  productDetails: { ...detailProduct }
+  productDetails: { ...detailProduct },
 };
 
 const productReducer = (state, action) => {
@@ -16,10 +17,10 @@ const productReducer = (state, action) => {
     case SET_PRODUCT_DETAILS:
       return {
         ...state,
-        productDetails: action.payload
+        productDetails: action.payload,
       };
     default:
-      throw new Error('Invalid action type');
+      throw new Error("Invalid action type");
   }
 };
 
